@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>Practical 9</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    </head>
+    <body ng-controller="myCtrl">
+        <form name="myForm">
+            <label>Name</label>
+            <input type="text" name="name" ng-model="emp.name" required>
+            <span ng-show="myForm.name.$touched && myForm.name.$invalid">Name is required</span><br><br>
+            <label>Age</label>
+            <input type="number" name="age" ng-model="emp.age" required>
+            <span ng-show="myForm.age.$touched && myForm.age.$invalid">Age is required</span><br><br>
+            <label>Gender  </label>
+            <input type="radio" value="Male" ng-model="emp.gender">Male
+            <input type="radio" value="Female" ng-model="emp.gender">Female
+            <br><br>
+            <label>Course </label>
+            <input type = "checkbox" ng-model="emp.java">Java
+            <input type = "checkbox" ng-model="emp.python">Python
+            <br><br>
+            <label>Department</label>
+            <select ng-model="emp.dept">
+                <option value ="">Select</option>
+                <option value="CSE">CSE</option>
+                <option value="IT">IT</option>
+                <option value="EXTC">EXTC</option>
+            </select>
+            <span ng-show ="!emp.dept">Dept req</span><br><br>
+            <button type="button">submit</button><br><br>
+        </form>
+        <p>Name : {{emp.name}}</p>
+        <p>Age : {{emp.age}}</p>
+        <p>Gender : {{emp.gender}}</p>
+        <p>Course : {{emp.java ? 'Java' : ''}} {{emp.python ? 'Python' : ''}}</p>
+        <p>Department : {{emp.dept}}</p>
+        <script>
+            var app = angular.module("myApp", []);
+            app.controller("myCtrl", function ($scope) {
+                $scope.emp = {
+                };
+            });
+        </script>
+    </body>
+</html>

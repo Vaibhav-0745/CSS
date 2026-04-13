@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>Practical 14</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    </head>
+    <body ng-controller="myCtrl">
+        <button ng-click="submitbtn()" ng-style = "btnStyle">Submit</button>
+        <script>
+            var app = angular.module("myApp",[]);
+            app.controller("myCtrl",function($scope){
+                $scope.submitbtn = function(){
+                    $scope.btnStyle = {"background-color":"yellow"};
+                };
+            });
+        </script>
+    </body>
+</html>                                   

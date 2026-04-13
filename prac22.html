@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>Practical 21</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    </head>
+    <body ng-controller="myCtrl">
+        <table border = "1" cellpadding = "10" >
+            <tr>
+                <th>Sr.No</th>
+                <th>Name</th>
+                <th>Empid </th>
+                <th>age </th>
+            </tr>
+            <tr ng-repeat = "employee in employees">
+                <td>{{$index+1}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.empid}}</td>
+                <td>{{employee.age}}</td>
+            </tr>
+        </table>
+
+        <script>
+            var app = angular.module("myApp",[]);
+            app.controller("myCtrl",function($scope){
+                $scope.employees = [
+                    {name : "Vaibhav Mendake", empid : 1, age : 25},
+                    {name : "John Doe", empid : 2, age : 30},
+                    {name : "Jane Smith", empid : 3, age : 28},
+                    {name : "Alice Johnson", empid : 4, age : 32}
+                ];
+            
+            });
+        </script>
+
+    </body>
+    </html>

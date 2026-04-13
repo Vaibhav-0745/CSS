@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>Practical 21</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script src = "studentcontroller.js"></script>
+    </head>
+    <body ng-controller="studentCtrl">
+        <table border = "1" cellpadding = "10" >
+            <tr>
+                <th>Sr.No</th>
+                <th>Name</th>
+                <th>rollno </th>
+                <th>marks </th>
+            </tr>
+            <tr ng-repeat = "student in students">
+                <td>{{$index+1}}</td>
+                <td>{{student.name}}</td>
+                <td>{{student.rollno}}</td>
+                <td>{{student.marks}}</td>
+            </tr>
+        </table>
+        
+        
+
+    </body>
+    </html>

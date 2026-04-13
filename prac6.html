@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practical 6</title>
+    </head>
+    <body>
+        <p id="show"></p>
+        <script>
+            var person = {
+                "Name" : "",
+                "Age" : null,
+                "City" : ""
+            };
+            document.getElementById("show").innerHTML = "Name : " + (person.Name || "Default Name") + "<br>" + "Age : " + (person.Age || "Default Age") + "<br>" + "City : " + (person.City || "Default City");   
+        </script>
+    </body>
+</html>

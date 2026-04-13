@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>Practical 14</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    </head>
+    <body ng-controller="myCtrl">
+        <label>First name:</label>
+        <input type = "text" ng-model="fname" name="fname">
+        <label>Last name:</label>
+        <input type="text" ng-model="lname" name="lname">
+        <p>{{fname +" "+lname|uppercase}}</p>
+        <script>
+           var app = angular.module("myApp",[]);
+           app.controller("myCtrl",function($scope){
+            $scope.fname = "";
+            $scope.lname = "";
+           })
+            
+        </script>
+    </body>
+</html>

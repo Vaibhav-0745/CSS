@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>Practical 21</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    </head>
+    <body ng-controller="myCtrl">
+        <h>Students Data : </h>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <tr>
+                <th>S.No.</th>
+                <th>Name</th>
+                <th>Roll No.</th>
+                <th>Marks</th>
+            </tr>
+            <tr ng-repeat="student in students">
+                <td>{{$index + 1}}</td>
+                <td>{{student.name}}</td>
+                <td>{{student.roll}}</td>
+                <td>{{student.marks}}</td>
+            </tr>
+            </table>
+        <script>
+            var app = angular.module("myApp",[]);
+            app.controller("myCtrl",function($scope){
+                $scope.students = [
+                    {name : "Vaibhav Mendake", roll : 1, marks : 90},
+                    {name : "John Doe", roll : 2, marks : 85},
+                    {name : "Jane Smith", roll : 3, marks : 92},
+                    {name : "Alice Johnson", roll : 4, marks : 88},
+                    {name : "Bob Brown", roll : 5, marks : 80}
+                ];
+            });
+        </script>
+    </body>
+</html>

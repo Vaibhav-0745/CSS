@@ -1,0 +1,48 @@
+<!Doctype html>
+<html ng-app = "myApp">
+<head>
+	<title>prac 20</title>
+	<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="myCtrl">
+<div 
+ng-mousemove= "move($event)"
+ng-click = "click($event)"
+ng-mouseenter = "enter($event)"
+ng-mouseleave="leave($event)"
+style = "background-color:lightblue; width : 300px; height : 300px; padding : 30px;">
+enter mouse here
+</div>
+
+<p>Mouse Move : X = {{moveX}},Y={{moveY}}</p>
+<p>Mouse enter : X = {{enterX}},Y={{enterY}}</p>
+<p>Mouse Click : X = {{clickX}},Y={{clickY}}</p>
+<p>Mouse leave : X = {{leaveX}},Y={{leaveY}}</p>
+
+<script>
+var app = angular.module("myApp",[]);
+app.controller("myCtrl",function($scope){
+$scope.move = function(event){
+$scope.moveX = event.offsetX;
+$scope.moveY = event.offsetY;
+};
+
+$scope.enter = function(event){
+$scope.enterX = event.offsetX;
+$scope.enterY = event.offsetY;
+};
+
+$scope.click = function(event){
+$scope.clickX = event.offsetX;
+$scope.clickY = event.offsetY;
+};
+
+$scope.leave = function(event){
+$scope.leaveX = event.offsetX;
+$scope.leaveY = event.offsetY;
+};
+});
+</script>
+
+</body>
+</html>

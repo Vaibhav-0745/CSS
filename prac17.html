@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>Practical 14</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    </head>
+    <body ng-controller="myCtrl">
+        <input type = "date" ng-model="userdate" name="date">
+        <p>dd//MM//yy : {{userdate | date:'dd/MM/yy'}}</p>
+        <p>MM//dd/yy : {{userdate | date:'MM/dd/yy'}}</p>
+        <p>shortdate : {{userdate | date:'shortDate'}}</p>
+        <p>medium : {{userdate | date:'medium'}}</p>
+        <P>fulldate : {{userdate | date:'fullDate'}}</P>
+
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl",function($scope){
+            $scope.userdate = "";
+        })
+    </script>
+    </body>
+    </html>

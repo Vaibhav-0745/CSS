@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>Practical 21</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <style>
+            .even-row{ background-color: green}
+        </style>
+    </head>
+    <body ng-controller="myCtrl">
+        <table border = "1" cellpading="10">
+            <tr>
+                <th>Sr.No</th>
+                <th>Name</th>
+                <th>Empid </th> 
+                <th>Age</th>
+            </tr>
+            <tr ng-repeat = "emp in employees" ng-class-even="'even-row'">
+                <td>{{$index+1}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.empid}}</td>
+                <td>{{emp.age}}</td>
+        </table>
+
+
+        <script>
+            var app = angular.module("myApp",[]);
+            app.controller("myCtrl",function($scope){
+                $scope.employees = [
+                    {name : "Vaibhav Mendake", empid : 1, age : 25},
+                    {name : "John Doe", empid : 2, age : 30},
+                    {name : "Jane Smith", empid : 3, age : 28},
+                    {name : "Alice Johnson", empid : 4, age : 32}
+                ];
+            
+            });
+        </script>
+
+    </body>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>Practical 14</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    </head>
+    <body ng-controller="myCtrl">
+       <h>Key Pressed Count : </h>
+       <input type="text" ng-keypress="countkey()">
+         <p>{{count}}</p>
+          <script>
+                var app = angular.module("myApp",[]);
+                app.controller("myCtrl",function($scope){
+                $scope.count = 0;
+                 $scope.countkey = function(){
+                    $scope.count++;
+                 }
+                });
+          </script>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>Practical 10</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    </head>
+
+    <body ng-controller="myCtrl">
+        <form name="myForm">
+            <label>Name:</label>
+            <input type="text" name="name" ng-model="stud.name" required>
+            
+            <label>Roll no :</label>
+            <input type="number" name="rolno" ng-model="stud.rollno" required>
+
+            <label>Subject : </label>
+            <select ng-model="stud.subject" required>
+                <option value =''>Select</option>
+                <option value="Maths">Maths</option>    
+                <option value="Physics">Physics</option>
+                <option value="Chemistry">Chemistry</option>
+            </select>
+          
+
+
+            <button type="submit" ng-click="submitForm()">Submit</button>
+
+        </form>
+        <p style="color:red; font-weight:bold;">{{errorMessage}}</p>
+        <div ng-show="registrationsuccess">
+            <h2 style="color: green;">Registration Successful!</h2>
+            <p>Name: {{stud.name}}</p>
+            <p>Roll No: {{stud.rollno}}</p>
+            <p>Subject: {{stud.subject}}</p>
+        </div>
+        <script>
+          var app =  angular.module("myApp",[]);
+          app.controller("myCtrl",function($scope){
+            $scope.stud = {};
+            $scope.registrationsuccess = false;
+            $scope.errorMessage = "";
+            $scope.submitForm = function() {
+                if (!$scope.stud.name) {
+                    $scope.errorMessage = "Name is required";
+                    $scope.registrationsuccess = false;
+                } else if (!$scope.stud.rollno) {
+                    $scope.errorMessage = "Roll no is required";
+                    $scope.registrationsuccess = false;
+
+                } else if (!$scope.stud.subject) {
+                    $scope.errorMessage = "Subject is required";
+                    $scope.registrationsuccess = false;
+                } else {
+                    $scope.errorMessage = "";
+                    $scope.registrationsuccess = true;
+            };}
+            });
+
+        </script>
+    </body>

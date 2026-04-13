@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>Practical 223</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    </head>
+    <body ng-controller="myCtrl">
+        <table border = "1" cellpadding = "10" >
+            <tr>
+                <th>Sr.No</th>
+                <th>Country</th>
+               
+            </tr>
+            <tr ng-repeat = "employee in employees">
+                <td>{{$index+1}}</td>
+                <td>{{employee.country}}</td>
+               
+            </tr>
+        </table>
+
+        <script>
+            var app = angular.module("myApp",[]);
+            app.controller("myCtrl",function($scope){
+                $scope.employees = [
+                    {country : "India"},
+                    {country : "USA"},
+                    {country : "UK"},
+                    {country : "Australia"}
+                ];
+            
+            });
+        </script>
+
+    </body>
+    </html>
